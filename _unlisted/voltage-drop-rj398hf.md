@@ -11,7 +11,7 @@ Whatever needs to be supplied by power on a spacecraft or on a testing setup, th
 ## Principle
 {: #voltage-drop-principle }
 
-Let's go back to the formula \( ... V=R_3\cdotI_1 \)
+Let's go back to the formula $$ ... V=R_3\cdot I_1 $$
 
 $$ V = R \times I_1 $$
 
@@ -20,12 +20,14 @@ Neither `history` over RS.
 ## Test Item
 
 ```
-$$ V = R \times I_1 $$
+Highlighted text
 ```
 
 {% include figure.html svg="retry-storm.svg" caption="Request rate at the caller during a 100% failure injection." %}
 
 The p99 is not the number you want.[^tail]. See also [voltage-drop-principle](#voltage-drop-principle).
+
+{% include figure.html src="/assets/img/voltage-drop/out.webp" alt="Request rate at the caller climbing 3x after the dependency starts failing" width="1200" height="860" caption="Load *increases* when capacity drops. Injection starts at t=40s." %}
 
 ## Resources
 

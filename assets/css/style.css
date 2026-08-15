@@ -287,3 +287,11 @@ main { max-width: var(--measure); margin: 0 auto; }
 .figure-svg { stroke: var(--ink); fill: none; color: var(--ink); }
 .figure-svg text { fill: var(--ink); stroke: none; }
 .figure-svg .accent { stroke: var(--accent); }
+
+.figure { margin: 2rem 0; }
+.figure img, .figure svg { max-width: 100%; height: auto; display: block; border-radius: 3px; }
+.figure figcaption {
+  font-family: var(--mono); font-size: .72rem; line-height: 1.6;
+  color: var(--ink-faint); margin-top: .6rem;
+}
+.figure figcaption a { color: var(--ink-soft); }
