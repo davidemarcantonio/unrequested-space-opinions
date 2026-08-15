@@ -1,8 +1,8 @@
 # ---- Identity -------------------------------------------------------------
-title: Space Systems Engineering Notes
-tagline: Working notes on interesting things on engineering for the void.
+title: Notes on Engineering for the Void 
+tagline: Working notes on interesting things on engineering space systems.
 description: >-
-  Articles on engineering for space. It spans interesting things that I discover in my work.
+  Random articles on engineering. It spans interesting things that I discover during my work.
 author: Davide Marcantonio
 
 # The public address of the site.
@@ -34,12 +34,19 @@ plugins:
   - jekyll-seo-tag   # generates <title>, og:, and twitter: meta tags
 
 # Every file in _posts gets layout: post without saying so.
+collections:
+  unlisted:
+    output: true
+    permalink: /u/:name/
+
 defaults:
-  - scope:
-      path: ""
-      type: posts
+  - scope: { path: "", type: posts }
     values:
       layout: post
+  - scope: { path: "", type: unlisted }     # add this block
+    values:
+      layout: post
+      noindex: true
 
 exclude:
   - README.md
