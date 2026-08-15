@@ -282,3 +282,8 @@ main { max-width: var(--measure); margin: 0 auto; }
 @media (prefers-reduced-motion: reduce) {
   * { animation: none !important; transition: none !important; }
 }
+
+.prose svg { max-width: 100%; height: auto; }
+.figure-svg { stroke: var(--ink); fill: none; color: var(--ink); }
+.figure-svg text { fill: var(--ink); stroke: none; }
+.figure-svg .accent { stroke: var(--accent); }

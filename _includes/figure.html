@@ -1,0 +1,7 @@
+<figure class="figure">
+  {%- if include.svg %}{% include figures/{{ include.svg }} %}
+  {%- else %}<img src="{{ include.src | relative_url }}" alt="{{ include.alt }}" loading="lazy"
+                  {% if include.width %}width="{{ include.width }}" height="{{ include.height }}"{% endif %}>
+  {%- endif %}
+  {%- if include.caption %}<figcaption>{{ include.caption | markdownify }}</figcaption>{% endif %}
+</figure>

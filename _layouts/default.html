@@ -7,6 +7,16 @@
   {%- feed_meta -%}
   <link rel="stylesheet" href="{{ '/assets/css/style.css' | relative_url }}">
   {%- if page.noindex %}<meta name="robots" content="noindex, nofollow">{% endif %}
+  {%- if page.math %}
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.css">
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/katex.min.js"></script>
+  <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.11/dist/contrib/auto-render.min.js"
+          onload="renderMathInElement(document.body, {
+            delimiters: [
+              {left: '$$', right: '$$', display: true},
+              {left: '\\(', right: '\\)', display: false}
+            ], throwOnError: false });"></script>
+  {%- endif %}
 </head>
 <body>
   <a class="skip" href="#main">Skip to content</a>
@@ -30,10 +40,6 @@
       <a href="{{ site.license.url }}" rel="license">{{ site.license.name }}</a>;
       code samples are <a href="{{ site.license.code_url }}">{{ site.license.code_name }}</a>.
       Attribution: {{ site.author }}, with a link back to the article.
-    </p>
-    <p class="fine">
-      Built with Jekyll. Source on
-      <a href="https://github.com/{{ site.github_username }}">GitHub</a>.
     </p>
   </footer>
 </body>

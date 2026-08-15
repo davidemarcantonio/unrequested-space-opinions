@@ -29,6 +29,9 @@ markdown: kramdown
 highlighter: rouge
 timezone: Europe/Amsterdam
 
+kramdown:
+  math_engine: null
+
 plugins:
   - jekyll-feed      # generates /feed.xml
   - jekyll-seo-tag   # generates <title>, og:, and twitter: meta tags
