@@ -4,9 +4,9 @@ layout: default
 <article class="post h-entry">
   <header class="post-head">
     <p class="kicker">
-      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
-        {{ page.date | date: "%Y-%m-%d" }}
-      </time>
+      {%- if page.date %}
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">{{ page.date | date: "%Y-%m-%d" }}</time>
+      {%- endif %}
       {%- if page.tags and page.tags.size > 0 %}
       <span class="sep">/</span>
       {%- for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor -%}
