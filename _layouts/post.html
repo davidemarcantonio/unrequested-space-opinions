@@ -1,0 +1,45 @@
+---
+layout: default
+---
+<article class="post h-entry">
+  <header class="post-head">
+    <p class="kicker">
+      <time class="dt-published" datetime="{{ page.date | date_to_xmlschema }}">
+        {{ page.date | date: "%Y-%m-%d" }}
+      </time>
+      {%- if page.tags and page.tags.size > 0 %}
+      <span class="sep">/</span>
+      {%- for tag in page.tags %}<span class="tag">{{ tag }}</span>{% endfor -%}
+      {%- endif %}
+      {%- if page.reading_time %}<span class="sep">/</span>{{ page.reading_time }}{% endif %}
+    </p>
+    <h1 class="p-name">{{ page.title }}</h1>
+    {%- if page.summary %}<p class="standfirst p-summary">{{ page.summary }}</p>{% endif %}
+  </header>
+
+  <div class="prose e-content">
+    {{ content }}
+  </div>
+
+  <footer class="post-foot">
+    <p>
+      &copy; {{ page.date | date: "%Y" }} {{ site.author }} &middot;
+      <a href="{{ site.license.url }}" rel="license">{{ site.license.name }}</a> &middot;
+      Corrections and disagreements welcome at
+      <a href="mailto:{{ site.email }}">{{ site.email }}</a>.
+    </p>
+  </footer>
+</article>
+
+<nav class="pager" aria-label="More posts">
+  {%- if page.previous %}
+  <a class="prev" href="{{ page.previous.url | relative_url }}">
+    <span class="lbl">Older</span>{{ page.previous.title }}
+  </a>
+  {%- endif %}
+  {%- if page.next %}
+  <a class="next" href="{{ page.next.url | relative_url }}">
+    <span class="lbl">Newer</span>{{ page.next.title }}
+  </a>
+  {%- endif %}
+</nav>

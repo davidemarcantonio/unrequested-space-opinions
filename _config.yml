@@ -1,0 +1,48 @@
+# ---- Identity -------------------------------------------------------------
+title: Space Systems Engineering Notes
+tagline: Working notes on interesting things on engineering for the void.
+description: >-
+  Articles on engineering for space. It spans interesting things that I discover in my work.
+author: Davide Marcantonio
+
+# The public address of the site.
+# User site  (repo named  <username>.github.io):  url is https://<username>.github.io, baseurl is ""
+# Project site (repo named anything else):        url is https://<username>.github.io, baseurl is "/<repo-name>"
+url: "https://davidemarcantonio.github.io"
+baseurl: "/unrequested-space-opinions"
+
+# Optional — used in the footer and the feed. Delete what you don't want.
+github_username: davidemarcantonio
+email: dm.marcantonio@gmail.com
+
+# ---- Content licence ------------------------------------------------------
+# Shown at the bottom of every article. See LICENSE for the reasoning.
+license:
+  name: CC BY 4.0
+  url: https://creativecommons.org/licenses/by/4.0/
+  code_name: MIT
+  code_url: https://opensource.org/licenses/MIT
+
+# ---- Build ----------------------------------------------------------------
+permalink: /:year/:month/:day/:title/
+markdown: kramdown
+highlighter: rouge
+timezone: Europe/Amsterdam
+
+plugins:
+  - jekyll-feed      # generates /feed.xml
+  - jekyll-seo-tag   # generates <title>, og:, and twitter: meta tags
+
+# Every file in _posts gets layout: post without saying so.
+defaults:
+  - scope:
+      path: ""
+      type: posts
+    values:
+      layout: post
+
+exclude:
+  - README.md
+  - Gemfile
+  - Gemfile.lock
+  - vendor
